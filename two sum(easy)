@@ -1,0 +1,17 @@
+int *twosum(int *nums, int numsSize,int target)
+{
+   int *a = (int*)malloc(2*sizeof(int)); 
+  int i,j;
+  for(i=0;i<numsSize;i++)
+   {
+      for(j=i+1;j<numsSize;j++)
+        if(target-*(nums+i)==*(nums+j))
+        {
+	        printf("%d %d",i,j);
+			a[0]=i;
+            a[1]=j;   
+	}
+    }
+
+	 return a;
+}
