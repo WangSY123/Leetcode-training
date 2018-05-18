@@ -1,0 +1,31 @@
+int* plusOne(int* digits, int digitsSize, int* returnSize) {
+   int i;
+   if(digits[digitsSize-1]!=9)digits[digitsSize-1]++;
+   else
+   {
+     for(i=digitsSize-1;i>=0;i--)
+      {
+        if(digits[i]==9)digits[i]=0;
+        else
+        {
+          digits[i]++;
+          break;
+        }
+      }
+   }
+   if(digits[0]==0)
+   {
+	   *returnSize=digitsSize+1;
+	int *arr=(int *)malloc(sizeof(int)*(*returnSize));
+    for(i=*returnSize-1; i>=1; i--)
+        arr[i] = digits[i-1];
+    arr[0]=1;
+   return arr;
+   }
+   else 
+   {
+    *returnSize=digitsSize;
+    return digits;
+   }
+   
+}
