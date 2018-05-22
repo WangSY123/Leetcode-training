@@ -1,3 +1,31 @@
+
+int main()
+{
+  int** generate(int numRows, int** columnSizes);
+    int numrows,i,j,k=0;
+	int **p;
+	
+	scanf("%d",&numrows);
+	int **columnsizes=(int **)malloc(sizeof(int*)*numrows);
+
+	p=generate(numrows,columnsizes);
+	for(i=0;i<numrows;i++)
+	{
+		for(j=0;j<numrows;j++)
+		{
+		 if(j<=i)
+		printf("%d ",*(*(p+i)+j));
+
+		}
+		printf("\n");
+	}
+	  
+	
+
+	system("pause");
+    return 0;
+}
+
 int** generate(int numRows, int** columnSizes) {
  int i,j;
  if(numRows==0)return 0;
