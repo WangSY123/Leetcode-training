@@ -1,0 +1,12 @@
+class Solution: 
+    def twoSum(self, numbers, target):
+        """
+        :type numbers: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        num_dict={}
+        for index,item in enumerate(numbers):
+            if (target-item) in num_dict:
+                return num_dict[target-item],index+1
+            num_dict[item]=index+1
