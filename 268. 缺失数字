@@ -1,0 +1,17 @@
+class Solution:
+    def missingNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        dic={}
+        num=set(nums)
+        nums=list(num)
+ 
+        for i in range(len(nums)):
+            dic[i]=nums[i]
+            if i==dic[i]:
+                continue
+            else:
+                return i
+        return len(nums)
