@@ -1,0 +1,39 @@
+class Solution:
+    def maximumProduct(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        num=nums[:]
+        s1=self.max_(num)
+        s2=self.max_(num)
+        s3=self.max_(num)
+        a_=[]
+        for i in nums:
+            if i<0:
+                a_.append(i)                        
+        if s1<=0 and s2<=0 and s3<=0:
+            return s1*s2*s3
+        elif s1>=0 and s2>=0 and s3<=0:
+            return s1*s2*s3
+        elif s1>=0 and s2<=0 and s3<=0:
+            m1=self.min_(nums)
+            m2=self.min_(nums)
+            return s1*m1*m2  
+        elif s1>=0 and s2>=0 and s3>=0:
+            if len(a_)>1:
+                m1=self.min_(nums)
+                m2=self.min_(nums)
+                max1=s1*m1*m2
+                max2=s1*s2*s3
+                return max(max1,max2)
+            else:
+                return s1*s2*s3                                 
+    def max_(self,lis):
+        s=max(lis)
+        lis.remove(s)
+        return s
+    def min_(self,lis):
+        s=min(lis)
+        lis.remove(s)
+        return s
