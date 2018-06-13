@@ -1,0 +1,20 @@
+class Solution:
+    def matrixReshape(self, nums, r, c):
+        """
+        :type nums: List[List[int]]
+        :type r: int
+        :type c: int
+        :rtype: List[List[int]]
+        """
+        matrix=[]
+        row=[]
+        if len(nums)*len(nums[0])!=r*c:
+            return nums
+        else:
+            for i in nums:
+                for j in i:
+                    row.append(j)
+                    if len(row)==c:
+                        matrix.append(row)
+                        row=[]
+            return matrix
