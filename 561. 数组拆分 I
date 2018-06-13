@@ -1,0 +1,10 @@
+nums.sort()
+        list_=[]
+        sum=0
+        for i in range(len(nums)//2):
+            
+            list_.append([nums[i*2],nums[i*2+1]])
+        for j in range(len(list_)):
+            sum=sum+min(list_[j])
+        print(list_)
+        return sum
