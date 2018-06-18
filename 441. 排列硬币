@@ -1,0 +1,16 @@
+class Solution(object):
+    def arrangeCoins(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        if n==0:
+            return 0
+        else:
+            row=1
+            while n>=row:
+                n=n-row
+                if n==0 or n<=row:
+                    return row
+                else:
+                    row+=1
