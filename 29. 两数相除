@@ -1,0 +1,34 @@
+class Solution(object):
+    def divide(self, dividend, divisor):
+        """
+        :type dividend: int
+        :type divisor: int
+        :rtype: int
+        """
+        if dividend==0:
+            return 0
+        else:
+            dividend_=abs(dividend)
+            divisor_=abs(divisor)
+            left=0
+            right=dividend_
+            
+            while left<=right:
+                mid=(left+right)//2
+                if mid*divisor_==dividend_ or (mid*divisor_<dividend_ and (mid+1)*divisor_>dividend_):
+                    ans=mid
+                    break
+                elif mid*divisor_>dividend_:
+                    right=mid-1
+                else:
+                    left=mid+1
+            if (dividend>0 and divisor>0) or (dividend<0 and divisor<0):
+                if ans >=  pow(2,31) - 1:
+                    return pow(2,31) - 1
+                else:
+                    return ans
+            else:
+                if ans <= -pow(2,31):
+                    return -pow(2,31)
+                else:
+                    return -ans
