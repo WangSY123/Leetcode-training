@@ -1,0 +1,14 @@
+class Solution:
+    def singleNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        dic={}
+        for index,value in enumerate (nums):
+            dic[value]=0
+        for i in range(len(nums)):
+            dic[nums[i]]+=1
+        for i in dic:
+            if dic[i]==1:
+                return int(i)
