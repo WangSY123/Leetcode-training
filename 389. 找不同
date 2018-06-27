@@ -1,0 +1,23 @@
+class Solution:
+    def findTheDifference(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: str
+        """
+        s1={}
+        t2={}
+        for idx,val in enumerate (s):
+            s1[val]=0
+        for idx,val in enumerate (t):
+            t2[val]=0
+        for i in s:
+            s1[i]+=1
+        for j in t:
+            t2[j]+=1
+        for m in t2:
+            if m in s1:
+                if t2[m]!=s1[m]:
+                    return m
+            else:
+                return m
