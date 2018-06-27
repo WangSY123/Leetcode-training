@@ -1,0 +1,16 @@
+class Solution:
+    def wordPattern(self, pattern, str):
+        """
+        :type pattern: str
+        :type str: str
+        :rtype: bool
+        """
+    
+        strToList = str.split()
+        patToList = list(pattern)
+        if len(strToList) != len(patToList):
+            return False
+        else:
+
+
+            return len(set(zip(strToList,patToList)))==len(set(strToList))==len(set(patToList))
